@@ -19,6 +19,9 @@ export const linkResolver = (doc) => {
   if (doc.url === "/home") {
     return "/";
   }
+  if (doc.type === "works"){
+    return "/works";
+  }
 };
 
 /**
@@ -33,6 +36,7 @@ export const createClient = (config = {}) => {
       { type: "page", path: "/:uid" },
       { type: "settings", path: "/" },
       { type: "navigation", path: "/" },
+      { type: "works", path: "/works" },
     ],
   });
 

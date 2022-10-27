@@ -1,6 +1,8 @@
 $black: #000;
 $light-blue: rgba(195, 251, 255, 1);
 
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 body,html{
 	padding: 0;
 	margin: 0;
@@ -24,7 +26,7 @@ body{
 	left: 0;
 	z-index: 999;
 	text-transform: uppercase;
-	border-bottom: 4px solid $black;
+	// border-bottom: 4px solid $black;
 	.title{
 		font-size: 48px;
 		margin-left: 1vw;
@@ -35,6 +37,8 @@ body{
 		display: flex;
 		justify-content: space-between;
 		margin-right: 1vw;
+		
+	}
 		a {
 			color: $black;
 			text-decoration: none;
@@ -43,15 +47,11 @@ body{
 			padding: 5px 20px;
 			transition: all 0.3s ease-in-out;
 			border: 3px solid $black;
+	
 			&:hover {
 				background-color: white;
 			}
 		}
-	}
-	a{
-		color: $black;
-		text-decoration: none;
-	}
 }
 
 .container{
@@ -107,11 +107,11 @@ body{
 #draggable0{
 	left: 1vw;
 	top: auto;
-	bottom: 25%;
+	bottom: 42%;
 }
 
 #draggable1 {
-	top: 40%;
+	top: 45%;
 	left: 20%;
 }
 
@@ -123,29 +123,29 @@ body{
 #draggable3 {
 	left: auto;
 	right: 15%;
-	top: 32%;
+	top: 35%;
 }
 
 #draggable4 {
-	left: auto;
-	right: 3vw;
-	top: 150px;
+	left: 25%;
+	top: 20px;
 }
 
 #draggable5 {
 	left: auto;
-	right: 30%;
+	right: 33%;
 	top: 150px;
 }
 
 #draggable6 {
-	left: 35%;
+	left: 32%;
 	top: 70%;
 }
 
 #draggable7 {
-	left: 31%;
-	top: 24px;
+	left: auto;
+	right: 3vw;
+	top: 124px;
 }
 
 #draggable8 {
@@ -182,9 +182,20 @@ body{
 		strong{
 			font-weight: 700;
 		}
+	}
+}
 
-		// &:first-child{
-		// 	border-right: 3px solid $black;
-		// }
+.works-grid{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	.work{
+		width: 22.5%;
+		margin: 0 1vw 1vw 1vw;
+		img{
+			width: 100%;
+			height: 26.5vw;
+			object-fit: cover;
+		}
 	}
 }

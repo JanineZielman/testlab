@@ -125,7 +125,8 @@
     },
     "navigation": {},
     "settings": {},
-    "work": {
+    "work": {},
+    "works": {
       "title": {
         "config": {
           "patternType": "HEADING",

@@ -12,20 +12,21 @@
           "placeholder": ""
         }
       },
-      "title": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Title",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "single": "heading1"
-        }
-      },
       "name": {
         "type": "Text",
         "config": {
           "label": "Name",
           "placeholder": ""
+        }
+      },
+      "cover_image": {
+        "type": "Image",
+        "config": {
+          "label": "Cover Image",
+          "constraint": {
+            "width": 600
+          },
+          "thumbnails": []
         }
       }
     }

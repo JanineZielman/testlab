@@ -156,17 +156,6 @@ export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDoc
 /** Content for Work documents */
 interface WorkDocumentData {
     /**
-     * Title field in *Work*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: *None*
-     * - **API ID Path**: work.title
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    title: prismicT.TitleField;
-    /**
      * Name field in *Work*
      *
      * - **Field Type**: Text
@@ -177,6 +166,17 @@ interface WorkDocumentData {
      *
      */
     name: prismicT.KeyTextField;
+    /**
+     * Cover Image field in *Work*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: work.cover_image
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    cover_image: prismicT.ImageField<never>;
 }
 /**
  * Work document from Prismic
@@ -188,7 +188,31 @@ interface WorkDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type WorkDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<WorkDocumentData>, "work", Lang>;
-export type AllDocumentTypes = NavigationDocument | PageDocument | SettingsDocument | WorkDocument;
+/** Content for Works documents */
+interface WorksDocumentData {
+    /**
+     * Title field in *Works*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: works.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+}
+/**
+ * Works document from Prismic
+ *
+ * - **API ID**: `works`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type WorksDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<WorksDocumentData>, "works", Lang>;
+export type AllDocumentTypes = NavigationDocument | PageDocument | SettingsDocument | WorkDocument | WorksDocument;
 /**
  * Primary content in Columns → Primary
  *
@@ -337,6 +361,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, WorkDocumentData, WorkDocument, AllDocumentTypes, ColumnsSliceDefaultPrimary, ColumnsSliceDefaultItem, ColumnsSliceDefault, ColumnsSliceVariation, ColumnsSlice, ImagesSliceDefaultItem, ImagesSliceDefault, ImagesSliceVariation, ImagesSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
+        export type { NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, WorkDocumentData, WorkDocument, WorksDocumentData, WorksDocument, AllDocumentTypes, ColumnsSliceDefaultPrimary, ColumnsSliceDefaultItem, ColumnsSliceDefault, ColumnsSliceVariation, ColumnsSlice, ImagesSliceDefaultItem, ImagesSliceDefault, ImagesSliceVariation, ImagesSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
     }
 }
