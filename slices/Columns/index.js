@@ -14,7 +14,7 @@ const Columns = ({ slice }) => {
       <div className='columns-wrapper'>
         {slice.items.map((item, i) => {
           return(
-            <div className='column'>
+            <div className='column' key={`column${i}`}>
               <PrismicRichText field={item.column}/>
             </div>
           )

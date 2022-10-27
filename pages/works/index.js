@@ -16,7 +16,7 @@ const Works = ({ page, navigation, settings, works }) => {
 			<div className="works-grid">
 				{works.map((item, i) => {
 					return(
-						<div className="work">
+						<div className="work" key={`work${i}`}>
 							<img src={item.data.cover_image.url}/>
 							<p>{item.data.name}</p>
 						</div>
