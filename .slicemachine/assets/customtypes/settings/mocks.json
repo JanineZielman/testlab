@@ -14,18 +14,18 @@
     "siteTitle": [
       {
         "type": "heading1",
-        "text": "Liquid",
+        "text": "Individual",
         "spans": []
       }
     ],
     "logo": {
       "dimensions": {
-        "width": 900,
+        "width": 300,
         "height": 500
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8"
+      "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2"
     },
     "image": {
       "dimensions": {
@@ -34,8 +34,8 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04"
+      "url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2"
     },
-    "description": "doubt"
+    "description": "milk"
   }
 }

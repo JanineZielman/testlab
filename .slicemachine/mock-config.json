@@ -93,6 +93,25 @@
           }
         }
       }
+    },
+    "Images": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "Columns": {
+      "default": {
+        "primary": {},
+        "items": {
+          "column": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
     }
   },
   "_cts": {
@@ -105,6 +124,14 @@
       }
     },
     "navigation": {},
-    "settings": {}
+    "settings": {},
+    "work": {
+      "title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
+    }
   }
 }

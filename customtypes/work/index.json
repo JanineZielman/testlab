@@ -1,6 +1,6 @@
 {
-  "id": "page",
-  "label": "Page",
+  "id": "work",
+  "label": "Work",
   "repeatable": true,
   "status": true,
   "json": {
@@ -21,21 +21,11 @@
           "single": "heading1"
         }
       },
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
+      "name": {
+        "type": "Text",
         "config": {
-          "choices": {
-            "text_block": {
-              "type": "SharedSlice"
-            },
-            "images": {
-              "type": "SharedSlice"
-            },
-            "columns": {
-              "type": "SharedSlice"
-            }
-          }
+          "label": "Name",
+          "placeholder": ""
         }
       }
     }

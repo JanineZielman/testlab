@@ -2,16 +2,17 @@ import { PrismicLink, PrismicText } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 
 export const Header = ({ navigation, settings }) => {
-  console.log(settings)
   return (
     <div className="header">
       <div className="title">
-        <PrismicText field={settings.data.siteTitle}/>
+        <PrismicLink href={`/`}>
+          <PrismicText field={settings.data.siteTitle}/>
+        </PrismicLink>
       </div>
       <div className="links">
         {navigation.data.links.map((item, i) => {
           return(
-            <PrismicLink field={item.link}>
+            <PrismicLink field={item.link} key={`nav${i}`}>
               <PrismicText field={item.label}/>
             </PrismicLink>
           )

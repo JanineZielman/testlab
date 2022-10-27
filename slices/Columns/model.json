@@ -1,34 +1,36 @@
 {
-  "id": "text_block",
+  "id": "columns",
   "type": "SharedSlice",
-  "name": "TextBlock",
-  "description": "TextBlock",
+  "name": "Columns",
+  "description": "Columns",
   "variations": [
     {
       "id": "default",
       "name": "Default",
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
-      "description": "TextBlock",
+      "description": "Columns",
       "primary": {
-        "text": {
+        "title": {
           "type": "StructuredText",
           "config": {
-            "label": "Text",
+            "single": "heading1",
+            "label": "Title",
+            "placeholder": "This is where it all begins..."
+          }
+        }
+      },
+      "items": {
+        "column": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Column",
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,list-item,o-list-item"
           }
-        },
-        "sectionid": {
-          "type": "Text",
-          "config": {
-            "label": "SectionID",
-            "placeholder": ""
-          }
         }
       },
-      "items": {},
       "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
     }
   ]

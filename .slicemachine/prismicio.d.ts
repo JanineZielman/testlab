@@ -85,7 +85,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = TextBlockSlice;
+type PageDocumentDataSlicesSlice = TextBlockSlice | ImagesSlice | ColumnsSlice;
 /**
  * Page document from Prismic
  *
@@ -153,7 +153,136 @@ interface SettingsDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
-export type AllDocumentTypes = NavigationDocument | PageDocument | SettingsDocument;
+/** Content for Work documents */
+interface WorkDocumentData {
+    /**
+     * Title field in *Work*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: work.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Name field in *Work*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: work.name
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    name: prismicT.KeyTextField;
+}
+/**
+ * Work document from Prismic
+ *
+ * - **API ID**: `work`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type WorkDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<WorkDocumentData>, "work", Lang>;
+export type AllDocumentTypes = NavigationDocument | PageDocument | SettingsDocument | WorkDocument;
+/**
+ * Primary content in Columns → Primary
+ *
+ */
+interface ColumnsSliceDefaultPrimary {
+    /**
+     * Title field in *Columns → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: columns.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+}
+/**
+ * Item in Columns → Items
+ *
+ */
+export interface ColumnsSliceDefaultItem {
+    /**
+     * Column field in *Columns → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: columns.items[].column
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    column: prismicT.RichTextField;
+}
+/**
+ * Default variation for Columns Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Columns`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ColumnsSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ColumnsSliceDefaultPrimary>, Simplify<ColumnsSliceDefaultItem>>;
+/**
+ * Slice variation for *Columns*
+ *
+ */
+type ColumnsSliceVariation = ColumnsSliceDefault;
+/**
+ * Columns Shared Slice
+ *
+ * - **API ID**: `columns`
+ * - **Description**: `Columns`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ColumnsSlice = prismicT.SharedSlice<"columns", ColumnsSliceVariation>;
+/**
+ * Item in Images → Items
+ *
+ */
+export interface ImagesSliceDefaultItem {
+    /**
+     * Image field in *Images → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: images.items[].image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for Images Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Images`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ImagesSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<ImagesSliceDefaultItem>>;
+/**
+ * Slice variation for *Images*
+ *
+ */
+type ImagesSliceVariation = ImagesSliceDefault;
+/**
+ * Images Shared Slice
+ *
+ * - **API ID**: `images`
+ * - **Description**: `Images`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ImagesSlice = prismicT.SharedSlice<"images", ImagesSliceVariation>;
 /**
  * Primary content in TextBlock → Primary
  *
@@ -169,6 +298,16 @@ interface TextBlockSliceDefaultPrimary {
      *
      */
     text: prismicT.RichTextField;
+    /**
+     * SectionID field in *TextBlock → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_block.primary.sectionid
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    sectionid: prismicT.KeyTextField;
 }
 /**
  * Default variation for TextBlock Slice
@@ -198,6 +337,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
+        export type { NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, WorkDocumentData, WorkDocument, AllDocumentTypes, ColumnsSliceDefaultPrimary, ColumnsSliceDefaultItem, ColumnsSliceDefault, ColumnsSliceVariation, ColumnsSlice, ImagesSliceDefaultItem, ImagesSliceDefault, ImagesSliceVariation, ImagesSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
     }
 }
