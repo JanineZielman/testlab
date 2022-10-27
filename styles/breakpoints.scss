@@ -1,0 +1,158 @@
+@media only screen and (max-width: 1800px) {
+	.header {
+		.title {
+			font-size: 30px;
+			margin-left: 1vw;
+		}
+
+		.links {
+			width: 80vw;
+			max-width: 600px;
+			margin-right: 4vw;
+		}
+
+		a {
+			font-size: 30px;
+		}
+	}
+	.text-block {
+		padding: 30px;
+		height: 140px;
+		width: 100%;
+		max-width: 600px;
+		p {
+			font-size: 30px;
+		}
+	}
+	#text1 {
+		top: 50%;
+		left: 3vw;
+		height: 70px;
+		width: 300px;
+	}
+	.draggable-image {
+		width: 280px;
+	}
+	.columns-section {
+		.column {
+			font-size: 20px;
+			padding: 0 1%;
+		}
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.header {
+		height: 80px;
+		.title {
+			font-size: 24px;
+			margin-left: 1vw;
+		}
+
+		.links {
+			width: 100%;
+			max-width: 500px;
+			margin-right: 4vw;
+		}
+
+		a {
+			font-size: 24px;
+			border-width: 2px;
+			padding: 5px 10px;
+		}
+	}
+	.container {
+		margin-top: 100px;
+	}
+	.works-grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		.work {
+			width: 45%;
+			margin: 0 1vw 1vw 1vw;
+
+			img {
+				width: 100%;
+				height: 55vw;
+				object-fit: cover;
+			}
+		}
+	}
+	.text-block {
+		padding: 20px;
+		height: 150px;
+		width: 100%;
+		max-width: 400px;
+		border-width: 2px;
+		border-radius: 20px;
+
+		p {
+			font-size: 24px;
+		}
+	}
+
+	#text1 {
+		top: 50%;
+		left: 3vw;
+		height: 50px;
+		border-radius: 15px;
+		width: 200px;
+	}
+	.columns-section{
+		.columns-wrapper{
+			flex-direction: column;
+		}
+		.column{
+			width: 95%;
+		}
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.header {
+		height: 60px;
+		.title {
+			font-size: 14px;
+			margin-left: 1vw;
+		}
+
+		.links {
+			width: 100%;
+			max-width: 250px;
+			margin-right: 4vw;
+		}
+
+		a {
+			font-size: 14px;
+			border-width: 2px;
+		}
+	}
+	.container{
+		margin-top: 80px;
+	}
+	.draggable-image {
+		width: 150px;
+	}
+		.text-block {
+			padding: 20px;
+			height: 100px;
+			width: 100%;
+			max-width: 300px;
+			border-width: 2px;
+			border-radius: 20px;
+	
+			p {
+				font-size: 18px;
+			}
+		}
+	
+		#text1 {
+			top: 50%;
+			left: 3vw;
+			height: 40px;
+			border-radius: 15px;
+			width: 200px;
+		}
+}
