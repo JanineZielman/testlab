@@ -135,24 +135,52 @@
 	.draggable-image {
 		width: 150px;
 	}
-		.text-block {
-			padding: 20px;
-			height: 100px;
-			width: 100%;
-			max-width: 300px;
-			border-width: 2px;
-			border-radius: 20px;
-	
-			p {
-				font-size: 18px;
-			}
+	.text-block {
+		padding: 20px;
+		height: 100px;
+		width: 100%;
+		max-width: 300px;
+		border-width: 2px;
+		border-radius: 20px;
+
+		p {
+			font-size: 18px;
 		}
-	
-		#text1 {
-			top: 50%;
-			left: 3vw;
-			height: 40px;
-			border-radius: 15px;
-			width: 200px;
-		}
+	}
+
+	#text1 {
+		top: 50%;
+		left: 3vw;
+		height: 40px;
+		border-radius: 15px;
+		width: 200px;
+	}
+
+	#draggable5,#draggable4, #draggable2 {
+		display: none;
+	}
+
+	#draggable1{
+		top: 30%;
+	}
+
+	#draggable6{
+		top: 60%;
+		left: auto;
+		right: 3vw;
+	}
+
+	#draggable7{
+		top: 24px;
+	}
+
+	#draggable8{
+		top: 60%;
+	}
+
+	#draggable0{
+		top: 60px;
+		left: 2vw;
+	}
+
 }
