@@ -41,6 +41,38 @@
 	}
 }
 
+
+@media only screen and (max-width: 1200px) {
+
+	#draggable5,#draggable4, #draggable2 {
+		display: none;
+	}
+
+	#draggable1{
+		top: 30%;
+	}
+
+	#draggable6{
+		top: 60%;
+		left: auto;
+		right: 3vw;
+	}
+
+	#draggable7{
+		top: 24px;
+	}
+
+	#draggable8{
+		top: 60%;
+	}
+
+	#draggable0{
+		top: 60px;
+		left: 2vw;
+	}
+
+}
+
 @media only screen and (max-width: 900px) {
 	.header {
 		height: 80px;
